@@ -123,7 +123,7 @@ public class Jaxb2ProgramAst<V> extends AbstractJaxb2Ast<V> {
                         List<de.fhg.iais.roberta.blockly.generated.Field> xmlFields = block.getField();
                         String fieldValue = null;
                         for ( de.fhg.iais.roberta.blockly.generated.Field xmlField : xmlFields ) {
-                            if ( field.getName().equals(fieldAnno.fieldName()) ) {
+                            if ( xmlField.getName().equals(fieldAnno.fieldName()) ) {
                                 fieldValue = xmlField.getValue();
                             }
                         }
