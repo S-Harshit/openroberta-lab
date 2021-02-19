@@ -77,7 +77,7 @@ public class MbedValidatorAndCollectorVisitor extends CommonNepoValidatorAndColl
 
     @Override
     public Void visitClearDisplayAction(ClearDisplayAction<Void> clearDisplayAction) {
-        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY_GRAYSCALE));
+        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY));
         return null;
     }
 
@@ -115,7 +115,7 @@ public class MbedValidatorAndCollectorVisitor extends CommonNepoValidatorAndColl
         } else {
             optionalComponentVisited(displayImageAction.getValuesToDisplay());
         }
-        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY_GRAYSCALE));
+        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY));
         return null;
     }
 
@@ -136,7 +136,7 @@ public class MbedValidatorAndCollectorVisitor extends CommonNepoValidatorAndColl
     @Override
     public Void visitDisplayTextAction(DisplayTextAction<Void> displayTextAction) {
         requiredComponentVisited(displayTextAction, displayTextAction.getMsg());
-        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY_GRAYSCALE));
+        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY));
         return null;
     }
 
@@ -170,7 +170,7 @@ public class MbedValidatorAndCollectorVisitor extends CommonNepoValidatorAndColl
 
     @Override
     public Void visitGetSampleSensor(GetSampleSensor<Void> sensorGetSample) {
-        requiredComponentVisited(sensorGetSample.getSensor());
+        requiredComponentVisited(sensorGetSample, sensorGetSample.getSensor());
         return null;
     }
 
@@ -197,14 +197,14 @@ public class MbedValidatorAndCollectorVisitor extends CommonNepoValidatorAndColl
     @Override
     public Void visitImageInvertFunction(ImageInvertFunction<Void> imageInvertFunction) {
         requiredComponentVisited(imageInvertFunction, imageInvertFunction.getImage());
-        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY_GRAYSCALE));
+        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY));
         return null;
     }
 
     @Override
     public Void visitImageShiftFunction(ImageShiftFunction<Void> imageShiftFunction) {
         requiredComponentVisited(imageShiftFunction, imageShiftFunction.getImage(), imageShiftFunction.getPositions());
-        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY_GRAYSCALE));
+        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY));
         return null;
     }
 
@@ -404,7 +404,7 @@ public class MbedValidatorAndCollectorVisitor extends CommonNepoValidatorAndColl
 
     @Override
     public Void visitShowTextAction(ShowTextAction<Void> showTextAction) {
-        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY_GRAYSCALE));
+        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY));
         requiredComponentVisited(showTextAction, showTextAction.getMsg(), showTextAction.getX(), showTextAction.getY());
         return null;
     }
@@ -429,7 +429,7 @@ public class MbedValidatorAndCollectorVisitor extends CommonNepoValidatorAndColl
 
     @Override
     public Void visitSwitchLedMatrixAction(SwitchLedMatrixAction<Void> switchLedMatrixAction) {
-        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY_GRAYSCALE));
+        usedHardwareBuilder.addUsedActor(new UsedActor("", SC.DISPLAY));
         return null;
     }
 

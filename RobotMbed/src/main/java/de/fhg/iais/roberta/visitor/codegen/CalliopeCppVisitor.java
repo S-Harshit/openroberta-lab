@@ -701,7 +701,7 @@ public final class CalliopeCppVisitor extends AbstractCppVisitor implements IMbe
             nlIndent();
             this.sb.append("_uBit.radio.enable();");
         }
-        if ( this.getBean(UsedHardwareBean.class).isSensorUsed(SC.ACCELEROMETER) ) {
+        if ( this.getBean(UsedHardwareBean.class).isSensorUsed(SC.ACCELEROMETER) || this.getBean(UsedHardwareBean.class).isSensorUsed(SC.COMPASS) ) {
             nlIndent();
             this.sb.append("_uBit.accelerometer.updateSample();");
         }
